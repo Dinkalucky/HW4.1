@@ -73,27 +73,30 @@ namespace Task1._3
                 }
             };
 
-            Console.WriteLine("Введіть ім'я родича, щоб побачити його нащадків");
+            Console.WriteLine("Введіть ім'я родича, щоб побачити його нащадків\n");
             string name = Console.ReadLine();
 
             Family.ShowFamily(Family, name);
-            Console.WriteLine("Повне родинне дерево:");
+            Console.WriteLine("\nПовне родинне дерево:\n");
             Family.ShowFamily(Family,0);
 
             int year;
-            Console.WriteLine("Вивести усіх, хто молодше цього року народження");
+            Console.WriteLine("\nВивести усіх, хто молодше цього року народження\n");
             Int32.TryParse(Console.ReadLine(), out year);
 
 
             Family.ShowRelatives(Family, year);
 
-            Family.AddChild(Family,"Сестра Юля", "Діна2",1995);
+            Console.WriteLine("\n Додаємо родича:\n");
+            
+            Family.AddChild(Family,"Сестра Юля", "Сергійко",2023);
             Family.Name = "Дідусь Володимир";
             Family.Year = 1910;
             Console.WriteLine("Повне родинне дерево:");
             Family.ShowFamily(Family, 0);
 
-            
+            Console.WriteLine("\n Видаляємо родича:\n");
+
             Family.RemoveChild(Family, "Тітка Катерина");
             Console.WriteLine("Повне родинне дерево:");
             Family.ShowFamily(Family, 0);
